@@ -1,7 +1,8 @@
 <?xmml version="1.0" encoding="UTF-8"?>
 <phpunit colors="true"
         verbose="true"
-        bootstrap="vendor/autoload.php">
+        bootstrap="vendor/autoload.php"
+        displayDetailsOnTestsThatTriggerDeprecations="true">
     <testsuites>
       <testsuite name="Test suite">
         <directory>tests</directory>
