@@ -11,7 +11,8 @@ class UserTest extends TestCase
 
         $mailer = $this->createMock(Mailer::class);
 
-        $mailer->method('send')
+        $mailer->expects($this->once())
+               ->method('send')
                ->willReturn(true);
 
         $user->setMailer($mailer);
