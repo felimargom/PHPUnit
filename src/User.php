@@ -14,6 +14,8 @@ class User
      */
     public $email;
 
+    protected $mailer;
+
     /**
      * Constructor
      *
@@ -27,6 +29,10 @@ class User
 
     }
 
+    public function setMailer(Mailer $mailer){
+        $this->mailer = $mailer;
+    }
+
     /**
      * Send the user a message
      *
@@ -36,7 +42,6 @@ class User
      */
     public function notify(string $message)
     {
-        $mailer = new Mailer;
-        return $mailer->send($this->email, $message);
+        return $this->mailer->send($this->email, $message);
     }
 }
