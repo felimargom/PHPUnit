@@ -9,7 +9,10 @@ class UserTest extends TestCase
     {
         $user = new User('dave@example.com');
 
-        $mailer = new Mailer;
+        $mailer = $this->createMock(Mailer::class);
+
+        $mailer->method('send')
+               ->willReturn(true);
 
         $user->setMailer($mailer);
 
